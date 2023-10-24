@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="JMSR">
+        <meta name="description" content="Plantilla para documento HTML 5">
+        <meta name="keywords" content="HTML, CSS">
+        
+        <title>Detalle de Empleado</title>
+    
+        {% load bootstrap4 %}
+        {% bootstrap_css %} 
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    
+    </head>
+    <body>
+        <div class="titulo">Detalles</div>
+
+        <p>
+            <span class="txt_negrita">
+                Nombre:
+            </span>
+            <br>
+            {{ object.nombre }}
+        </p>
+        <p>
+            <span class="txt_negrita">
+                Apellido:
+            </span>
+            <br>
+            {{ object.apellidos }}
+        </p>
+        <p>
+            <span class="txt_negrita">
+                Puesto:
+            </span>
+            <br>
+            {{ object.puesto }}
+        </p>
+        <p>
+            <span class="txt_negrita">
+                Foto:
+            </span>
+            <br>
+            <img src="{% static 'uploads/' %}{{ object.foto }}" alt="{{ object.nombre }}" class="img-fluid">
+        </p>
+        <p>
+            <span class="txt_negrita">
+                Creado:
+            </span>
+            <br>
+            {{ object.creado }}
+        </p>
+        <p>
+            <span class="txt_negrita">
+                Modificado:
+            </span>
+            <br>
+            {{ object.modificado }}
+        </p>
+        <a href="../" type="submit" class="btn btn-primary">
+            Volver
+        </a>
+    
+        {% bootstrap_javascript jquery='full' %}
+    </body>
+</html>

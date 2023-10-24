@@ -1,0 +1,21 @@
+.txt_negrita {
+	font-weight: bold!important;
+}
+
+body > main > div > div.row.mb-5 > div.col-md-10 > div > div > form > div:nth-child(5) > a {
+	display: none!important;
+}
+
+.ocultar {
+	display: none!important;
+}
+
+.titulo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: bold;
+	min-height: 10vh;
+	background-color: #218838;
+}

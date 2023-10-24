@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="JMSR">
+        <meta name="description" content="Plantilla para documento HTML 5">
+        <meta name="keywords" content="HTML, CSS">
+        
+        <title class="titulo">Editar Empleado</title>
+    
+        {% load bootstrap4 %}
+        {% bootstrap_css %} 
+        {% load static %}
+        {% load widget_tweaks %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    
+    </head>
+    <body>
+        <div class="titulo">Editar</div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="nombre" class="txt_negrita">Nombre</label>
+                {{ form.nombre|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="apellido" class="txt_negrita">Apellido</label>
+                {{ form.apellidos|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="puesto" class="txt_negrita">Puesto</label>
+                {{ form.puesto|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="foto" class="txt_negrita">Foto</label>
+                {{ form.foto|add_class:"form-control mb-3" }}
+                <p class="txt_negrita">Foto</p>
+                <img src="{% static 'uploads/' %}{{ object.foto }}" class="img-fluid" alt="{{ object.nombre }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <a href="../" type="submit" class="btn btn-danger">Cancelar</a>
+
+        </form>
+    
+        {% bootstrap_javascript jquery='full' %}
+    </body>
+</html>
